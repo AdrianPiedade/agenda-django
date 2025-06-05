@@ -1,5 +1,5 @@
 from django.contrib import admin
-from contact.models import Contact
+from contact.models import Contact, Category
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
@@ -11,3 +11,8 @@ class ContactAdmin(admin.ModelAdmin):
     list_max_show_all = 250
     list_editable = ('phone',)
     list_display_links = ('id', 'first_name',)
+
+@admin.register(Category)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    ordering = ('-id',)
